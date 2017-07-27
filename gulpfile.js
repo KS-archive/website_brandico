@@ -116,7 +116,6 @@ gulp.task('concatenate-html', function() {
       	prefix: '@@',
       	basepath: '@file'
     	}))
-		.pipe(injectSvg())
 		.pipe(htmlmin({
 			collapseWhitespace: true,
 			removeComments: true
