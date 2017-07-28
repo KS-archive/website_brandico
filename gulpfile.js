@@ -16,6 +16,7 @@ const gulp = require('gulp'),
 		fileinclude = require('gulp-file-include'), // Importowanie html.
 		injectSvg = require('gulp-inject-svg'), // Importowanie svg.
 		rename = require("gulp-rename"), // Zmiana nazwy pliku wyjściowego.
+      rollup = require('gulp-better-rollup'),
 		reload = function(){setTimeout(browserSync.reload, 1000)};
 
 let production = false;
@@ -70,7 +71,7 @@ gulp.task('concatenate', ['concatenate-scripts', 'concatenate-styles', 'concaten
 // Konkatenacja i minifikacja skryptów - development.
 gulp.task('concatenate-scripts', function() {
 	return gulp.src(['./src/main.js', './src/components/**/*.js'])
-		.pipe(sourcemaps.init())
+		.pipe(gulpif(!production, sourcemaps.init()))
 		.pipe(babel({
 			presets: ['env'],
 			compact: true
@@ -81,20 +82,18 @@ gulp.task('concatenate-scripts', function() {
 				html5_comments: false
 			},
 			compress: {
-				dead_code: true,
-				unused: true,
 				join_vars: true,
 				passes: 3
 			}
 		})))
-		.pipe(sourcemaps.write())
+		.pipe(gulpif(!production, sourcemaps.write()))
 		.pipe(gulp.dest('./dist/'));
 });
 
 // Konkatenacja i minifikacja stylów (development).
 gulp.task('concatenate-styles', function() {
 	return gulp.src('./src/main.scss')
-		.pipe(sourcemaps.init())
+		.pipe(gulpif(!production, sourcemaps.init()))
 		.pipe(sass().on('error', sass.logError))
 		.pipe(stripCssComments({preserve: false}))
 		.pipe(autoprefixer({
@@ -105,7 +104,7 @@ gulp.task('concatenate-styles', function() {
 		.pipe(gulpif(production, cleanCSS({
 			level: 2
 		})))
-		.pipe(sourcemaps.write())
+		.pipe(gulpif(!production, sourcemaps.write()))
 		.pipe(gulp.dest('./dist/'));
 });
 
@@ -116,7 +115,6 @@ gulp.task('concatenate-html', function() {
       	prefix: '@@',
       	basepath: '@file'
     	}))
-		.pipe(injectSvg())
 		.pipe(htmlmin({
 			collapseWhitespace: true,
 			removeComments: true
