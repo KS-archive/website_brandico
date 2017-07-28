@@ -6,10 +6,24 @@
 body {
    margin: 0;
    padding: 0;
+	overflow-x: hidden;
    font-family: 'Poppins', 'Arial', sans-serif;
 }
 
+// Wrapper na elementy.
 .container {
 	width: 824px;
 	margin: 0 auto;
+
+	@media (max-width: 900px) {
+		width: 700px;
+	}
+
+	@media (max-width: 750px) {
+		width: 550px;
+	}
+
+	@media (max-width: 600px) {
+		width: 450px;
+	}
 }
