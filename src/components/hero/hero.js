@@ -1,27 +1,3 @@
-$(document).ready(function(){
-
-	// Obiekt konfiguracyjny slidera.
-	const slider = {
-		actualSlide: 0, // Numera ktualnego slajdu.
-		iterationTime: 5000, // Czas między zmianą slajdów.
-		backgrounds: [], // Tła dla poszczególnych slajdów.
-		$heroContent: $('.hero__content'), // Zawartośc wszystkich slajdów.
-		$heroContainer: $('.hero__container'), // Główny div slidera.
-	};
-
-	// Dodanie teł to tablicy.
-	document.querySelectorAll('.hero__content').forEach((el) => {
-		slider.backgrounds.push(el.dataset.background);
-	});
-
-	// Załadowanie pierwszego slajdu/hero.
-	slider.$heroContainer.css('backgroundImage', `url(${slider.backgrounds[slider.actualSlide]})`);
-	slider.$heroContent.first().addClass('active');
-
-	// Inicjalizacja slidera jeśli istnieje więcej niż 1 tło dla hero.
-	(slider.backgrounds.length > 1) ? initializeSlider(slider) : $('.hero__controls').remove();
-});
-
 // Inicjalizacja slidera.
 const initializeSlider = (slider) => {
 
@@ -101,3 +77,32 @@ const createDots = (number) => {
 
 	return content;
 }
+
+/***********************
+   Kod wykonywany
+***********************/
+
+(function(){
+
+   // Obiekt konfiguracyjny slidera.
+   const slider = {
+      actualSlide: 0, // Numera ktualnego slajdu.
+      iterationTime: 5000, // Czas między zmianą slajdów.
+      backgrounds: [], // Tła dla poszczególnych slajdów.
+      $heroContent: $('.hero__content'), // Zawartośc wszystkich slajdów.
+      $heroContainer: $('.hero__container'), // Główny div slidera.
+   };
+
+   // Dodanie teł to tablicy.
+   document.querySelectorAll('.hero__content').forEach((el) => {
+      slider.backgrounds.push(el.dataset.background);
+   });
+
+   // Załadowanie pierwszego slajdu/hero.
+   slider.$heroContainer.css('backgroundImage', `url(${slider.backgrounds[slider.actualSlide]})`);
+   slider.$heroContent.first().addClass('active');
+
+   // Inicjalizacja slidera jeśli istnieje więcej niż 1 tło dla hero.
+   (slider.backgrounds.length > 1) ? initializeSlider(slider) : $('.hero__controls').remove();
+
+})();

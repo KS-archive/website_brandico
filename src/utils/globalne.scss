@@ -1,3 +1,5 @@
+@import './zmienne';
+
 @font-face {
 	font-family: 'Gilroy';
 	src: url('./fonts/gilroy-extrabold.otf');
@@ -7,7 +9,7 @@ body {
    margin: 0;
    padding: 0;
 	overflow-x: hidden;
-   font-family: 'Poppins', 'Arial', sans-serif;
+   font-family: $primaryFont, 'Arial', sans-serif;
 }
 
 // Wrapper na elementy.
