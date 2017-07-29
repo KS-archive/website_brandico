@@ -17,6 +17,7 @@ const gulp = require('gulp'),
 		injectSvg = require('gulp-inject-svg'), // Importowanie svg.
 		rename = require("gulp-rename"), // Zmiana nazwy pliku wyjściowego.
       rollup = require('gulp-better-rollup'),
+      plumber = require('gulp-plumber'),
 		reload = function(){setTimeout(browserSync.reload, 1000)};
 
 let production = false;
@@ -71,7 +72,8 @@ gulp.task('concatenate', ['concatenate-scripts', 'concatenate-styles', 'concaten
 // Konkatenacja i minifikacja skryptów - development.
 gulp.task('concatenate-scripts', function() {
 	return gulp.src(['./src/main.js', './src/components/**/*.js'])
-		.pipe(gulpif(!production, sourcemaps.init()))
+      .pipe(plumber())
+      .pipe(gulpif(!production, sourcemaps.init()))
 		.pipe(babel({
 			presets: ['env'],
 			compact: true
@@ -87,6 +89,7 @@ gulp.task('concatenate-scripts', function() {
 			}
 		})))
 		.pipe(gulpif(!production, sourcemaps.write()))
+      .pipe(plumber.stop())
 		.pipe(gulp.dest('./dist/'));
 });
 

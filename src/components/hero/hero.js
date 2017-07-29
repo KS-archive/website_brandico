@@ -2,20 +2,21 @@ $(document).ready(function(){
 
 	// Obiekt konfiguracyjny slidera.
 	const slider = {
+		actualSlide: 0, // Numera ktualnego slajdu.
 		iterationTime: 5000, // Czas między zmianą slajdów.
-		backgrounds: [
-			'./img/projekty/pomarańczowe/projekty_warsztaty.jpg',
-			'./img/projekty/pomarańczowe/projekty_content_marketing.jpg',
-			'./img/projekty/pomarańczowe/projekty_xfeb.JPG'
-		], // Tła dla poszczególnych slajdów.
+		backgrounds: [], // Tła dla poszczególnych slajdów.
+		$heroContent: $('.hero__content'), // Zawartośc wszystkich slajdów.
+		$heroContainer: $('.hero__container'), // Główny div slidera.
 	};
 
-	// Numer aktualnego slajdu.
-	slider.actualSlide = 0;
+	// Dodanie teł to tablicy.
+	document.querySelectorAll('.hero__content').forEach((el) => {
+		slider.backgrounds.push(el.dataset.background);
+	});
 
 	// Załadowanie pierwszego slajdu/hero.
-	$('.hero__container').css('backgroundImage', `url(${slider.backgrounds[slider.actualSlide]})`);
-	$('.hero__content').first().addClass('active');
+	slider.$heroContainer.css('backgroundImage', `url(${slider.backgrounds[slider.actualSlide]})`);
+	slider.$heroContent.first().addClass('active');
 
 	// Inicjalizacja slidera jeśli istnieje więcej niż 1 tło dla hero.
 	(slider.backgrounds.length > 1) ? initializeSlider(slider) : $('.hero__controls').remove();
@@ -29,12 +30,13 @@ const initializeSlider = (slider) => {
 
 	// Utworzenie kropek do zmiany slajdów.
 	$('.hero__controls').html(createDots(slider.slidesNumber));
+	slider.$heroControl = $('.hero__control');
 
 	// Ustawienie aktywnej kropki.
-	$('.hero__control').first().addClass('active');
+	slider.$heroControl.first().addClass('active');
 
 	// Dodanie obserwatorów zdarzeń do kropek.
-	$('.hero__control').click((e) => {changeSlideOnClick(e, slider)});
+	slider.$heroControl.click((e) => {changeSlideOnClick(e, slider)});
 
 	// Rozpoczęcie interwalu do zmiany slajdów.
 	slider.interval = setInterval(() => {
@@ -74,13 +76,13 @@ const changeSlideOnInterval = (slider, actualSlide) => {
 const activeChange = (position, slider) => {
 
 	// Zmiana zaznaczonej kropki.
-	$('.hero__control').removeClass('active').eq(position).addClass('active');
+	slider.$heroControl.removeClass('active').eq(position).addClass('active');
 
 	// Zmiana contentu.
-	$('.hero__content').removeClass('active').eq(position).addClass('active');
+	slider.$heroContent.removeClass('active').eq(position).addClass('active');
 
 	// Zmiana zdjęcia w tle.
-	$('.hero__container').css('backgroundImage', `url(${slider.backgrounds[position]})`);
+	slider.$heroContainer.css('backgroundImage', `url(${slider.backgrounds[position]})`);
 
 	// Zaktualizowanie indeksu aktywnego slajdu.
 	slider.actualSlide = position;
