@@ -27,13 +27,17 @@
 
 	&.uwr {
 		height: 43px;
+
+      @media (max-width: 1670px) {
+			display: none;
+		}
 	}
 
 	&.brandico {
 		height: 53px;
 
-		@media (max-width: 1670px) {
-			display: none;
+      @media (max-width: 1670px) {
+			height: 43px;
 		}
 	}
 }
