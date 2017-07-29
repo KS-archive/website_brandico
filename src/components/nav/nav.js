@@ -1,19 +1,29 @@
-let nav = {
-	$navContainer: $('.nav__container'),
-	isSticky: false,
-}
+(function(){
 
-nav.height = nav.$navContainer.height();
+	let nav = {
+		$navContainer: $('.nav__container'),
+		isSticky: false,
+	   viewportHeight: $(window).height(),
+	}
 
-// Aktywacja pól przy kliknięciu.
-$('.nav__item').click(function() {
-	$('.nav__item.active').removeClass('active');
-	$(this).addClass('active');
-});
+	nav.height = nav.$navContainer.height();
 
-// Sticky nav.
-$(window).scroll(function() {
-	(global.viewportHeight - nav.height > $(this).scrollTop())
-		? nav.$navContainer.removeClass('sticky')
-		: nav.$navContainer.addClass('sticky');
-});
+	// Aktywacja pól przy kliknięciu.
+	$('.nav__item').click(function() {
+		$('.nav__item.active').removeClass('active');
+		$(this).addClass('active');
+	});
+
+	// Sticky nav.
+	$(window).scroll(function() {
+		(nav.viewportHeight - nav.height > $(this).scrollTop())
+			? nav.$navContainer.removeClass('sticky')
+			: nav.$navContainer.addClass('sticky');
+	});
+
+	// Aktualizowanie rozmiarow viewportu.
+	$(window).resize(function() {
+	   nav.viewportHeight = $(this).height();
+	});
+
+})();

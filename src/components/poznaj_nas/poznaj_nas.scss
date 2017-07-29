@@ -1,5 +1,20 @@
 .members__description {
+	font-size: 20px;
+	font-weight: 500;
+	color: #3c3c3b;
+}
 
+.members__description-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.members__line {
+	width: 206px;
+	height: 1px;
+	margin: 35px 0 70px;
+	background-color: #ebebeb;
 }
 
 .members__container {
@@ -8,6 +23,7 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0 60px;
+	user-select: none;
 }
 
 .members__arrow {
@@ -17,16 +33,23 @@
 	i {
 		font-size: 28px;
 		color: #3c3c3b;
+
+		&:hover {
+			cursor: pointer;
+			font-size: 29px;
+		}
 	}
 }
 
 .members__wrapper {
+	position: relative;
 	overflow: hidden;
 	max-width: calc(100% - 40px);
 	height: 500px;
 }
 
 .members__wrapper-content {
+	position: relative;
 	display: flex;
 }
 
