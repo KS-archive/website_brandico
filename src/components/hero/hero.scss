@@ -8,7 +8,7 @@
 	flex-direction: column;
 	width: 100vw;
 	height: calc(100vh - #{$menuHeight});
-	background-color: #f18400;
+	background-color: $color1;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -72,7 +72,7 @@
 	border-radius: 20px;
 	margin-top: auto;
 	margin-bottom: 14px;
-	background-color: rgba(#f18400, .43);
+	background-color: rgba($color1, .43);
 	font-size: 22px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -107,7 +107,7 @@
    cursor: pointer;
 
 	&.active {
-		background-color: rgba(#f18400, .47);
+		background-color: rgba($color1, .47);
 	}
 
 	&:last-of-type {
