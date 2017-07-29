@@ -1,7 +1,8 @@
-const getContent = () => {
+const getContent = (about) => {
    $.getJSON( '../../json/członkowie.json', function( data ) {
 
       let content = '';
+      about.members = data;
 
       data.map((member) => {
          content += `
@@ -17,7 +18,19 @@ const getContent = () => {
       });
 
       $('.members__wrapper-content').html(content);
+
+      // Zmiana rozmiarów pól w karuzeli na bazie szerokości ekranu.
+      changeDimensions();
    });
+}
+
+const changeDimensions = () => {
+   let carouselWidth = $('.members__wrapper-content').width();
+   let memberWidth = $('.members__member').outerWidth();
+   let membersPerView = Math.floor(carouselWidth / memberWidth);
+   let neededMargin = (carouselWidth - membersPerView * memberWidth) / ( 2 + (membersPerView - 1));
+   $('.members__member:first-of-type').css('marginLeft', `${neededMargin}px`);
+   $('.members__member:not(:last-of-type)').css('marginRight', `${neededMargin}px`);
 }
 
 /***********************
@@ -26,7 +39,14 @@ const getContent = () => {
 
 (function(){
 
-   // Pobranie zawartości (członków).
-   getContent();
+   const about = {
+      members: [], // Kolokcja członków koła.
+   }
 
+   // Pobranie zawartości (członków).
+   getContent(about);
+
+   $(window).resize(function() {
+      changeDimensions();
+   });
 })();
