@@ -12,6 +12,11 @@ body {
    font-family: $primaryFont, 'Arial', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+   margin: 0;
+   padding: 0;
+}
+
 // Wrapper na elementy.
 .container {
 	width: 824px;
@@ -27,5 +32,26 @@ body {
 
 	@media (max-width: 600px) {
 		width: 450px;
+	}
+}
+
+// Naglówki sekcji.
+.header {
+   margin: 120px 0 60px;
+   font-family: $secondFont;
+   text-align: center;
+   line-height: 1;
+   text-transform: uppercase;
+
+	.header__top {
+		margin: 0 0 10px;
+	   font-size: 40px;
+	   color: #3c3c3b;
+	}
+
+	.header__bottom {
+		margin: 0;
+	   font-size: 17px;
+	   color: #acacac;
 	}
 }

@@ -1,0 +1,42 @@
+.why__content {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 130px;
+	margin-bottom: 240px;
+}
+
+.orange-text {
+	color: $color1;
+}
+
+.why__name {
+	margin: 0 0 10px;
+	font-family: $secondFont;
+	font-size: 164px;
+	line-height: 1;
+	text-transform: uppercase;
+
+	@media (max-width: 910px) {
+		font-size: 17vw;
+		align-self: flex-start;
+		text-align: left;
+	}
+}
+
+.why__description {
+	font-family: $secondFont;
+	font-size: 24px;
+}
+
+.why__line {
+	height: 1px;
+	width: 205px;
+	margin: 60px 0;
+	background-color: #ebebeb;
+}
+
+.why__more-description {
+	font-size: 20px;
+	font-weight: 500;
+}
