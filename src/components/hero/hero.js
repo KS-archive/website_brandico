@@ -86,7 +86,7 @@ const createDots = (number) => {
 
    // Obiekt konfiguracyjny slidera.
    const slider = {
-      actualSlide: 0, // Numera ktualnego slajdu.
+      actualSlide: 0, // Numer aktualnego slajdu.
       iterationTime: 5000, // Czas między zmianą slajdów.
       backgrounds: [], // Tła dla poszczególnych slajdów.
       $heroContent: $('.hero__content'), // Zawartośc wszystkich slajdów.

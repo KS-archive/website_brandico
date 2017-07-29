@@ -1,0 +1,46 @@
+{
+    "cykliczne": [
+        {
+            "zdjęcie": "projekty_kreakcja_2.jpg",
+            "nazwa": "KreAkcja",
+            "opis": "Narodziła się z akcji i tworzenia. Zapraszamy ludzi związanych z branżą kreatywną, którzy dzielą się swoją wiedzą i doświadczeniem. To nie jest kolejna konferencja, to spotkanie i rozmowa między słuchaczami a gośćmi. Wydarzenie skierowane jest do wszystkich zainteresowanych danym tematem – nie tylko studentów IDiKS. Do tej pory odbyły się trzy edycje: Wizerunek w branży mody, Wizerunek na Youtube oraz Promocja w kulturze."
+        },
+        {
+            "zdjęcie": "projekty_kawa_mózgowa.jpg",
+            "nazwa": "Kawa mózgowa",
+            "opis": "To projekt wewnętrzny, od nas dla nas. W przestrzeni innej niż sala wykładowa spotykamy się z wykładowcami i pogłębiamy tematy, które pojawiają się na zajęciach lub które nas po prostu interesują. Niektóre typowo branżowe, inne z zakresu nauk społecznych. Dzięki bardziej kameralnej i luźnej atmosferze rozwiewamy wątpliwości, debatujemy, poddajemy pod dyskusję różne kwestie. Do tej pory poruszyliśmy m.in. tematy takie jak: klient-instrukcja obsługi, marketing partyzancki, grupa docelowa, branding kulturowy wg. koncepcji Douglasa Holta, biennale plakatu, minimalizm, branding narodowy, prognozowanie trendów czy failcore."
+        },
+        {
+            "zdjęcie": "projekty_jarmark.jpg",
+            "nazwa": "Jarmark charytatywny",
+            "opis": "Co roku przed przerwą świąteczną organizujemy jarmark charytatywny, którego dochód przeznaczany jest na pomoc podopiecznym fundacji Król i Smok. Projektujemy kartki, pieczemy ciasta, przygotowujemy zimowe napoje. Zawsze udaje nam się też zdobyć książki od wykładowców i wydawnictw chcących wesprzeć inicjatywę – błyskawicznie znikają  rozchwytywane przez studentów."
+        },
+        {
+            "zdjęcie": "warsztaty.jpg",
+            "nazwa": "Warsztaty ",
+            "opis": "Warsztaty wyjazdowe dla członków koła odbywają się min. dwa razy do roku. Wyjeżdżamy w góry lub nad jezioro i wytężamy głowy motywowani przez wykładowców. Czasem bardziej projektowo i branżowo, czasem teoretycznie i naukowo. Zawsze intensywnie i twórczo. \n Jeśli tylko pojawia się taka możliwość, prowadzimy też warsztaty dla innych, występując w roli moderatorów. Chcemy dzielić się naszą wiedzą i promować trenowanie miękkich kompetencji. Przeprowadziliśmy m.in. warsztaty kreatywności w XIII LO we Wrocławiu w ramach Dni Humanistów Wydziału Filologicznego oraz Świata nie zmienisz? Warsztat design thinking w Galerii Design BWA we Wrocławiu."
+        }
+    ],
+    "zakończone": [
+        {
+            "zdjęcie": "projekty_xfeb.JPG",
+            "nazwa": "Brandico x FEB\n„O brandingu”",
+            "opis": "Wspólna inicjatywa Brandico i Forum Edukacji Biznesowej Uniwersytetu Ekonomicznego. Cykl czterech spotkań z ekspertami z branży skierowany był do wszystkich studentów obu uczelni, którzy chcieli się dowiedzieć, jak kompleksowym i rozbudowanym procesem jest tworzenie spójnego wizerunku firmy. Byliśmy odpowiedzialni za opracowanie programu i zagadnień, jakie mają zostać poruszone, zaproszenie prelegentów, przygotowanie identyfikacji wizualnej oraz prowadzenie mediów społecznościowych. "
+        },
+        {
+            "zdjęcie": "projekty_content_marketing.jpg",
+            "nazwa": "Content marketing&co?",
+            "opis": "Jak się o czymś nie wie, to zawsze można to gdzieś sprawdzić. Po to powstało forum, by posłuchać – a nie googlować – co to takiego content marketing. Gościliśmy prelegentów, którzy na co dzień brną przez gęstą mgłę mozolnej pracy w agencji. Podzielili się z nami pakietem cennych i dobrych rad. Tematy wystąpień dotyczyły narzędzi, copywritingu, relacji z influencerami, video CM. Porozmawialiśmy o tym, jak od pomysłu na kampanię przejść do jego realizacji i ostatecznie dystrybucji, a na końcu – jak ważny w kontencie jest jego kontekst. "
+        },
+        {
+            "zdjęcie": "projekty_drzwi_otwarte.jpg",
+            "nazwa": "Drzwi otwarte IDiKS",
+            "opis": "Podczas drzwi otwartych odbyły się warsztaty dla kandydatów przeprowadzone przez wykładowców oraz spotkanie z dyrekcją i kadrą naukową instytutu. Naszym zadaniem było utworzenie tematycznych punktów informacyjnych dla przyszłych studentów komunikacji wizerunkowej, gdzie mogli porozmawiać z nami o zaletach studiowania na UWr i specyfice studiów. Opracowaliśmy manual, który wykorzystaliśmy podczas wydarzenia, żeby odpowiadać na pytania jednym tonem. Przygotowane przez nas sekcje dotyczyły m.in.: specjalizacji, kół naukowych, Erasmusa czy perspektyw zawodowych."
+        },
+        {
+            "zdjęcie": "projekty_jak_poruszać_się.jpg",
+            "nazwa": "Jak poruszać się po komunikacji wizerunkowej?",
+            "opis": "Uznaliśmy, że odrobinę pomożemy nowym studentom naszego enigmatycznego kierunku i opowiemy im nieco o komunikacji wizerunkowej oraz wszystkich technicznych aspektach studiowania (czyt. “skąd wziąć kluczyk do szafki” lub “kiedy wybiera się specjalizację”). Pierwszą częścią spotkania informacyjnego była prezentacja, a podczas drugiej odpowiedzieliśmy na pojawiające się pytania uczestników."
+        }
+    ]
+}
