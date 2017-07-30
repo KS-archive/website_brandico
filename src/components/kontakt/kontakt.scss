@@ -1,0 +1,113 @@
+.contact__container {
+	display: flex;
+	justify-content: space-between;
+	width: 70%;
+	margin: 0 auto 160px;
+
+	@media (max-width: 1366px) {
+		width: 90%;
+	}
+
+	@media (max-width: 1024px) {
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		width: 80%;
+	}
+}
+
+.contact__map {
+	height: 513px;
+	width: calc(100% - 370px);
+	background-color: #acacac;
+
+	@media (max-width: 1024px) {
+		width: 100%;
+	}
+}
+
+.contact__data {
+	display: flex;
+	flex-direction: column;
+	width: 330px;
+
+	@media (max-width: 1024px) {
+		align-items: center;
+		width: 500px;
+		margin-bottom: 60px;
+	}
+}
+
+.contact__head-data {
+
+}
+
+.contact__text-line {
+	margin-bottom: 14px;
+	font-weight: 700;
+	font-size: 17px;
+	text-transform: uppercase;
+	color: #acacac;
+
+	@media (max-width: 1024px) {
+		text-align: center;
+	}
+
+	&:first-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.contact__line {
+	width: 95px;
+	min-height: 1px;
+	color: #e1e1e1;
+	margin: 10px 0;
+}
+
+.contact__socials {
+	display: flex;
+	margin-top: auto;
+
+	a {
+		margin-right: 5px;
+	}
+}
+
+.contact__social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background-color: #e1e1e1;
+	color: #fff;
+	transition: all .3s;
+
+	@media (max-width: 1024px) {
+		margin-top: 10px;
+		margin-bottom: 40px;
+	}
+
+	&.facebook:hover {
+		cursor: pointer;
+		background-color: #3B5998 ;
+	}
+
+	&.instudy:hover {
+		cursor: pointer;
+		background-color: #212B40;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	i {
+		font-size: 30px;
+	}
+
+	img {
+		max-width: 25px;
+	}
+}
