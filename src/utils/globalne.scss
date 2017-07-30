@@ -22,6 +22,21 @@ a {
    text-decoration: none;
 }
 
+body::-webkit-scrollbar-track
+{
+	display: none;
+}
+
+body::-webkit-scrollbar
+{
+	display: none;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	display: none;
+}
+
 // Wrapper na elementy.
 .container {
 	width: 824px;

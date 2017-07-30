@@ -75,6 +75,12 @@
 	font-size: 22px;
 	font-weight: 600;
 	text-transform: uppercase;
+
+   &:hover {
+      transition: all .3s;
+      background-color: rgba($color1, .63);
+      cursor: pointer;
+   }
 }
 
 .fa-chevron-down.hero {
@@ -87,6 +93,10 @@
    animation-duration: 2s;
 	animation-iteration-count: infinite;
 	animation-fill-mode: both;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .hero__controls {

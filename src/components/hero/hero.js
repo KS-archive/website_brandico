@@ -105,4 +105,11 @@ const createDots = (number) => {
    // Inicjalizacja slidera jeśli istnieje więcej niż 1 tło dla hero.
    (slider.backgrounds.length > 1) ? initializeSlider(slider) : $('.hero__controls').remove();
 
+	// Aktywacja dolnego przycisku i strzałki w dół.
+	$('.hero__button, .fa.fa-chevron-down.hero').click(function() {
+		$('html, body').animate({
+         scrollTop: ($('#dlaczego_brandico').offset().top - 100 - 60)
+      }, 1000);
+	});
+
 })();

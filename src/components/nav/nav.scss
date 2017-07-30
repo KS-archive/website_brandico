@@ -12,7 +12,6 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-      height: 80px;
 
       .nav__logo.uwr, .nav__divider-light, .nav__divider-dark {
          display: none;
@@ -114,4 +113,12 @@
 		font-size: 20px;
 		margin-right: 25px;
 	}
+}
+
+.nav__filler {
+   z-index: 1000;
+	display: flex;
+   height: 0;
+   width: 100vw;
+   visibility: hidden;
 }

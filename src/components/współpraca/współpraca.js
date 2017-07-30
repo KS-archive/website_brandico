@@ -73,7 +73,6 @@
    }
 
    const initialize = (partners) => {
-      console.log('obj');
       $('.partners__wrapper-content').each(function(i, el) {
          $(this).children().each(function(index, element) {
             if (partners[i].elementWidths) {
