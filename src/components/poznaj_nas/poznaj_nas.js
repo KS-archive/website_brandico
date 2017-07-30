@@ -58,7 +58,7 @@
       about.membersPerView = Math.floor(carouselWidth / about.memberWidth);
 
       // Margines niezbędny dla zapewnienia oczekiwanego efektu.
-      let neededMargin = (carouselWidth - about.membersPerView * about.memberWidth) / ( 2 + (about.membersPerView - 1));
+      let neededMargin = (carouselWidth - about.membersPerView * about.memberWidth) / ( 1 + about.membersPerView );
 
       // Liczba pikseli do przesuwania slidera.
       about.moveByPx = about.memberWidth + neededMargin;
