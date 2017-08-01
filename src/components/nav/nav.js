@@ -24,7 +24,7 @@
 
       if (nav.lastActive !== navClass) {
          nav.lastActive = navClass;
-         $('.nav__item.active').removeClass('active');
+         $('.nav__item.active, .nav__item--mobile.active').removeClass('active');
    		$(navClass).addClass('active');
       }
    }
@@ -47,10 +47,25 @@
       smoothScroll(e, $(this).attr('class').split('A_')[1]);
 	});
 
+   $('.nav__item--mobile').click(function(e) {
+		$('.nav__item--mobile.active').removeClass('active');
+      $('.nav__container--mobile').fadeToggle();
+		$(this).addClass('active');
+      smoothScroll(e, $(this).attr('class').split('A_')[1]);
+	});
+
 	// Sticky nav.
 	$(window).scroll(function() {
 
       checkActive(nav);
+
+      if (nav.viewportHeight > $(this).scrollTop()) {
+         $('.nav__logo.brandico').show();
+         $('.nav__burger').removeClass('orange');
+      } else {
+         $('.nav__logo.brandico').hide();
+         $('.nav__burger').addClass('orange')
+      }
 
 		if (nav.viewportHeight - nav.height > $(this).scrollTop()) {
          nav.$navContainer.removeClass('sticky');
@@ -65,5 +80,9 @@
 	$(window).resize(function() {
 	   nav.viewportHeight = $(this).height();
 	});
+
+   $('.nav__burger').click(() => {
+      $('.nav__container--mobile').fadeToggle();
+   });
 
 })();

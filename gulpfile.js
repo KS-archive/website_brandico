@@ -16,7 +16,6 @@ const gulp = require('gulp'),
 		fileinclude = require('gulp-file-include'), // Importowanie html.
 		injectSvg = require('gulp-inject-svg'), // Importowanie svg.
 		rename = require("gulp-rename"), // Zmiana nazwy pliku wyjściowego.
-      rollup = require('gulp-better-rollup'),
       plumber = require('gulp-plumber'),
 		reload = function(){setTimeout(browserSync.reload, 1000)};
 
