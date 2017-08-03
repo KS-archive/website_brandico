@@ -1,5 +1,14 @@
 (function(){
 
+   const toggleLogo = (nav) => {
+      if (nav.viewportWidth <= 1190) {
+         nav.$navContainer.css('background-color', 'transparent').css('box-shadow', 'none');
+         (nav.viewportHeight - nav.height < $(window).scrollTop()) ? $('.nav__container').hide() : $('.nav__container').show();
+      } else {
+         nav.$navContainer.css('background-color', '#fff');
+      }
+   }
+
    const smoothScroll = (e, id) => {
       let target = $(`#${id.split(' ')[0]}`);
       $('html, body').animate({
@@ -36,6 +45,7 @@
       $navAnchors: $('#hero, #dlaczego_brandico, #poznaj_nas, #projekty, #współpraca, #jak_dołączyć'),
 		isSticky: false,
 	   viewportHeight: $(window).height(),
+      viewportWidth: $(window).width(),
       height: $('.nav__container').height(),
       lastActive: '',
 	}
@@ -54,31 +64,34 @@
       smoothScroll(e, $(this).attr('class').split('A_')[1]);
 	});
 
+   toggleLogo(nav);
+
 	// Sticky nav.
 	$(window).scroll(function() {
 
       checkActive(nav);
 
       if (nav.viewportHeight > $(this).scrollTop()) {
-         $('.nav__logo.brandico').show();
          $('.nav__burger').removeClass('orange');
       } else {
-         $('.nav__logo.brandico').hide();
          $('.nav__burger').addClass('orange')
       }
 
 		if (nav.viewportHeight - nav.height > $(this).scrollTop()) {
-         nav.$navContainer.removeClass('sticky');
+         nav.$navContainer.removeClass('sticky').css('height', '100px');
          nav.$navFiller.css('height', '0px');
       } else {
-         nav.$navContainer.addClass('sticky');
+         nav.$navContainer.addClass('sticky').css('height', '80px');
          nav.$navFiller.css('height', '100px');
       }
+      toggleLogo(nav);
 	});
 
 	// Aktualizowanie rozmiarow viewportu.
 	$(window).resize(function() {
 	   nav.viewportHeight = $(this).height();
+      nav.viewportWidth = $(this).width();
+      toggleLogo(nav);
 	});
 
    $('.nav__burger').click(() => {

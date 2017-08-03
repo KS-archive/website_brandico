@@ -95,9 +95,9 @@
 .nav__item {
 	display: flex;
 	align-items: center;
-	margin-right: 35px;
+	margin-right: 30px;
 	font-family: $secondFont;
-	font-size: 24px;
+	font-size: 22px;
 	text-transform: uppercase;
 	text-align: center;
 	color: #3c3c3b;
@@ -121,8 +121,8 @@
 	}
 
 	@media (max-width: 1360px) {
-		font-size: 20px;
-		margin-right: 25px;
+		font-size: 19px;
+		margin-right: 20px;
 	}
 }
 

@@ -51,9 +51,9 @@
    // Przesunięcie karuzeli w prawo.
    const partnersMoveRight = (partners, index) => {
       if (partners[index].leftIndex < partners[index].elementWidths.length - partners[index].logosInView) {
-         partners[index].$partnersWrapperContent.animate({
-            left: `-=${partners[index].moveRightByPx}`,
-         }, () => {
+         let left = partners[index].$partnersWrapperContent.css('left');
+         left -= partners[index].moveRightByPx;
+         partners[index].$partnersWrapperContent.css('left', left).promise().then(() => {
             partners[index].leftIndex++;
             changeDimensions(partners);
          });

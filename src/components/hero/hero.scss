@@ -23,6 +23,10 @@
 .hero__slide {
 	position: relative;
 	height: 100%;
+
+	@media (max-width: 1190px) {
+		width: 100%;
+	}
 }
 
 .hero__content {
@@ -42,11 +46,24 @@
 	&.active {
 		opacity: 1;
 	}
+
+	@media (max-width: 1190px) {
+		height: 100vh;
+	}
 }
 
 .hero__logo {
 	width: 188px;
 	margin-top: 180px;
+
+	@media (max-width: 1190px) {
+		width: 140px;
+		margin-top: 130px;
+	}
+
+	@media (max-width: 600px) {
+		display: none;
+	}
 }
 
 .hero__header {
@@ -56,6 +73,15 @@
 	font-weight: 900;
 	line-height: 1;
 	text-transform: uppercase;
+
+	@media (max-width: 1190px) {
+		margin-top: 30px;
+		font-size: 60px;
+	}
+
+	@media (max-width: 600px) {
+		display: none;
+	}
 }
 
 .hero__description {
@@ -64,6 +90,19 @@
 	font-weight: 600;
 	line-height: 1.4;
 	text-align: center;
+
+	@media (max-width: 1190px) {
+		margin: 0;
+		font-size: 20px;
+	}
+
+	@media (max-width: 600px) {
+		margin-top: 60%;
+	}
+
+	@media (max-height: 900px) {
+		margin-bottom: 50px;
+	}
 }
 
 .hero__button {
@@ -101,6 +140,14 @@
 	&:hover {
 		cursor: pointer;
 	}
+
+	@media (max-height: 900px) {
+		margin-bottom: 200px;
+	}
+
+	@media (max-height: 640px) {
+		margin-bottom: 30px;
+	}
 }
 
 .hero__controls {
@@ -109,6 +156,13 @@
 	bottom: 100px;
 	display: flex;
    height: 15px;
+
+	@media (max-height: 640px) {
+		right: unset;
+		left: 50%;
+		bottom: 150px;
+		transform: translate(-50%, 0);
+	}
 }
 
 .hero__control {

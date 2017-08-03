@@ -25,6 +25,10 @@
 	margin-bottom: 180px;
 	padding: 0 60px;
 	user-select: none;
+
+	@media (max-width: 600px) {
+		padding: 0 10px;
+	}
 }
 
 .members__arrow {
@@ -61,6 +65,11 @@
 	align-items: center;
 	min-width: 400px;
 	padding: 0 30px;
+
+	@media (max-width: 560px) {
+		min-width: 300px;
+		max-width: 300px;
+	}
 }
 
 .member__img-link {
