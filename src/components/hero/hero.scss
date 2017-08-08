@@ -64,6 +64,10 @@
 	@media (max-width: 600px) {
 		display: none;
 	}
+
+	@media (max-height: 700px) and (min-width: 1200px) {
+		margin-top: 50px;
+	}
 }
 
 .hero__header {
@@ -124,6 +128,10 @@
       background-color: rgba($color1, .63);
       cursor: pointer;
    }
+
+	@media (max-height: 700px) and (min-width: 1200px) {
+		display: none;
+	}
 }
 
 .fa-chevron-down.hero {
@@ -145,8 +153,12 @@
 		margin-bottom: 200px;
 	}
 
-	@media (max-height: 640px) {
+	@media (max-height: 700px) {
 		margin-bottom: 30px;
+	}
+
+	@media (max-height: 700px) and (min-width: 1200px) {
+		display: none;
 	}
 }
 
@@ -162,6 +174,13 @@
 		left: 50%;
 		bottom: 150px;
 		transform: translate(-50%, 0);
+	}
+
+	@media (max-height: 700px) and (min-width: 1200px) {
+		right: 73px;
+		bottom: 100px;
+		left: unset;
+		transform: none;
 	}
 }
 
