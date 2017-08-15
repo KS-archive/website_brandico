@@ -9,9 +9,17 @@
    });
 
    owl1.owlCarousel({
-      loop: true,
       autoWidth: true,
-      center: true,
+      responsive: {
+         1470: {
+            loop: false,
+            center: false,
+         },
+         0: {
+            loop: true,
+            center: true,
+         },
+      }
    });
 
    $('#partners__left0').click(() => { owl0.trigger('prev.owl.carousel'); });
