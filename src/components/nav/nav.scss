@@ -167,6 +167,7 @@
    display: none;
    width: 100vw;
    height: 100vh;
+   padding-top: 40px;
    background-color: rgba(#333, .99);
 }
 
@@ -182,9 +183,9 @@
 .nav__item--mobile {
    display: flex;
 	align-items: center;
-   margin-top: 60px;
+   margin-top: 40px;
 	font-family: $secondFont;
-	font-size: 24px;
+	font-size: 20px;
 	text-transform: uppercase;
 	text-align: center;
    color: #fff;
