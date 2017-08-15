@@ -88,3 +88,13 @@
 .owl-carousel .owl-item img {
 	width: unset;
 }
+
+.partners__wrapper.carousel1 .owl-stage-outer {
+	display: flex;
+	justify-content: center;
+
+	@media (max-width: 1470px) {
+		display: block;
+		justify-content: unset;
+	}
+}
