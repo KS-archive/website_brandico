@@ -5,7 +5,7 @@
    ***********************/
 
    const getContent = (slider) => {
-      $.getJSON( '../../json/projekty.json', function( data ) {
+      $.getJSON( './json/projekty.json', function( data ) {
 
          for (let i=0; i < 2; i++) {
             let content = '';
@@ -71,20 +71,21 @@
 
    // Zmiana slajdu powodowane przez kliknięcie na kropkę.
    const changeSProjectOnClick = (e, projects, which, position = -1) => {
-      if (position < 0) {
+      let newPos = position;
+      if (newPos < 0) {
          // Ustalenie indeksu klikniętej kropki.
-      	let position = $(e.target).parent().children().index($(e.target));
+      	newPos = $(e.target).parent().children().index($(e.target));
       }
 
    	// Zmiana aktywnego slajdu.
       if (which) {
-         projects.$projectDotsRight.removeClass('active').eq(position).addClass('active');
-      	projects.$projectContentRight.removeClass('active').eq(position).addClass('active');
-         projects.activeDotRight = position;
+         projects.$projectDotsRight.removeClass('active').eq(newPos).addClass('active');
+      	projects.$projectContentRight.removeClass('active').eq(newPos).addClass('active');
+         projects.activeDotRight = newPos;
       } else {
-         projects.$projectDotsLeft.removeClass('active').eq(position).addClass('active');
-      	projects.$projectContentLeft.removeClass('active').eq(position).addClass('active');
-         projects.activeDotLeft = position;
+         projects.$projectDotsLeft.removeClass('active').eq(newPos).addClass('active');
+      	projects.$projectContentLeft.removeClass('active').eq(newPos).addClass('active');
+         projects.activeDotLeft = newPos;
       }
    }
 

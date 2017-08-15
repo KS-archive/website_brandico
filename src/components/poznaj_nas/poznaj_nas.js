@@ -5,7 +5,7 @@
    ***********************/
 
    const getContent = (about) => {
-      $.getJSON( '../../json/członkowie.json', function( data ) {
+      $.getJSON( './json/członkowie.json', function( data ) {
 
          // Utworznie zmiennej na content.
          let content = '';
@@ -35,7 +35,7 @@
                loop: true,
                items: 4,
                responsive : {
-                  1600: {
+                  1650: {
                      items: 4,
                   },
                   1250: {
