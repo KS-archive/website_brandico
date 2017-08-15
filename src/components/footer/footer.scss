@@ -1,4 +1,5 @@
 .footer {
+	overflow: hidden;
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
@@ -10,12 +11,23 @@
 	font-size: 17px;
 	text-transform: uppercase;
 	color: #acacac;
+
+	@media (max-width: 520px) {
+		flex-direction: column;
+		height: unset;
+		padding: 15px 30px;
+	}
 }
 
 .footer__right {
 	display: flex;
 	align-items: center;
 	margin-left: auto;
+
+	@media (max-width: 520px) {
+		margin-left: unset;
+		margin-top: 20px;
+	}
 }
 
 .footer__project {
