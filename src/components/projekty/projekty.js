@@ -47,25 +47,68 @@
       projects.$projectDotsRight.first().addClass('active');
       projects.$projectContentLeft.first().addClass('active');
       projects.$projectContentRight.first().addClass('active');
+      projects.activeDotRight = 0;
+      projects.activeDotLeft = 0;
 
    	// Dodanie obserwatorów zdarzeń do kropek.
    	projects.$projectDotsLeft.click((e) => {changeSProjectOnClick(e, projects, 0)});
       projects.$projectDotsRight.click((e) => {changeSProjectOnClick(e, projects, 1)});
+
+      // Hammer
+      const projectContailerLeft = document.getElementById('project0');
+      const projectContailerRight = document.getElementById('project1');
+      const hammer0 = new Hammer(projectContailerLeft);
+      const hammer1 = new Hammer(projectContailerRight);
+      hammer0.on('swipeleft swiperight', (e) => {
+         if (e.type === 'swipeleft') moveRight(projects, 0);
+         else moveLeft(projects, 0);
+      });
+      hammer1.on('swipeleft swiperight', (e) => {
+         if (e.type === 'swipeleft') moveRight(projects, 1);
+         else moveLeft(projects, 1);
+      });
    };
 
    // Zmiana slajdu powodowane przez kliknięcie na kropkę.
-   const changeSProjectOnClick = (e, projects, which) => {
-
-   	// Ustalenie indeksu klikniętej kropki.
-   	let position = $(e.target).parent().children().index($(e.target));
+   const changeSProjectOnClick = (e, projects, which, position = -1) => {
+      if (position < 0) {
+         // Ustalenie indeksu klikniętej kropki.
+      	let position = $(e.target).parent().children().index($(e.target));
+      }
 
    	// Zmiana aktywnego slajdu.
       if (which) {
          projects.$projectDotsRight.removeClass('active').eq(position).addClass('active');
-      	 projects.$projectContentRight.removeClass('active').eq(position).addClass('active');
+      	projects.$projectContentRight.removeClass('active').eq(position).addClass('active');
+         projects.activeDotRight = position;
       } else {
          projects.$projectDotsLeft.removeClass('active').eq(position).addClass('active');
       	projects.$projectContentLeft.removeClass('active').eq(position).addClass('active');
+         projects.activeDotLeft = position;
+      }
+   }
+
+   const moveRight = (projects, which) => {
+      if (which) {
+         let position = projects.activeDotRight + 1;
+         if (position > projects.$projectDotsRight.length - 1) position = 0;
+         changeSProjectOnClick(null, projects, which, position);
+      } else {
+         let position = projects.activeDotLeft + 1;
+         if (position > projects.$projectDotsLeft.length - 1) position = 0;
+         changeSProjectOnClick(null, projects, which, position);
+      }
+   }
+
+   const moveLeft = (projects, which) => {
+      if (which) {
+         let position = projects.activeDotRight - 1;
+         if (position < 0) position = projects.$projectDotsRight.length - 1;
+         changeSProjectOnClick(null, projects, which, position);
+      } else {
+         let position = projects.activeDotLeft - 1;
+         if (position < 0) position = projects.$projectDotsLeft.length - 1;
+         changeSProjectOnClick(null, projects, which, position);
       }
    }
 
