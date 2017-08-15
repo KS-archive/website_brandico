@@ -57,26 +57,14 @@
 	}
 }
 
-.partners__wrapper {
-	position: relative;
-	overflow: hidden;
+.partners__wrapper{
 	max-width: calc(100% - 40px);
 	height: 120px;
-}
-
-.partners__wrapper-content {
-	position: relative;
-	display: flex;
-	align-items: center;
-   transition: all .6s;
 
 	a {
 		box-sizing: border-box;
-		padding: 0 60px;
-
-      @media (max-width: 655px) {
-   		padding: 0 10px;
-   	}
+		display: block;
+		margin: 0 60px;
 	}
 
 	img {
@@ -88,3 +76,14 @@
    	}
 	}
 }
+
+.partners__wrapper .owl-stage {
+	display: flex;
+	align-items: center;
+}
+
+.partners__wrapper.carousel1 {
+	.owl-item.center {
+ 		margin-left: 30px;
+ 	}
+ }
