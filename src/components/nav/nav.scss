@@ -62,6 +62,10 @@
       @media (max-width: 1190px) {
          filter: grayscale(100%) brightness(5);
    	}
+
+      @media (max-width: 400px) {
+			left: 30px;
+		}
 	}
 }
 
@@ -154,6 +158,10 @@
    @media (max-width: 1190px) {
 		display: block;
 	}
+
+   @media (max-width: 400px) {
+      right: 30px;
+   }
 }
 
 .nav__container--mobile {

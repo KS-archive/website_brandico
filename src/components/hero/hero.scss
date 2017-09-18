@@ -50,26 +50,28 @@
 	}
 }
 
+.hero__wrapper {
+	position: relative;
+	top: -50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .hero__logo {
 	width: 188px;
-	margin-top: 180px;
 
 	@media (max-width: 1190px) {
 		width: 140px;
-		margin-top: 130px;
 	}
 
 	@media (max-width: 600px) {
 		display: none;
 	}
-
-	@media (max-height: 700px) and (min-width: 1200px) {
-		margin-top: 50px;
-	}
 }
 
 .hero__header {
-	margin: 80px 0 20px;
+	margin: 40px 0 20px;
 	font-family: $secondFont;
 	font-size: 80px;
 	font-weight: 900;
@@ -87,7 +89,7 @@
 }
 
 .hero__description {
-	margin: 0 0 150px;
+	padding: 0 30px;
 	font-size: 22px;
 	font-weight: 600;
 	line-height: 1.4;
@@ -95,17 +97,18 @@
    max-width: 95vw;
 
 	@media (max-width: 1190px) {
-		margin: 0;
 		font-size: 20px;
 	}
+}
 
-	@media (max-width: 600px) {
-		margin-top: 60%;
-	}
-
-	@media (max-height: 900px) {
-		margin-bottom: 50px;
-	}
+.hero__bottom {
+	position: absolute;
+	bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100px;
 }
 
 .hero__button {
@@ -115,7 +118,6 @@
 	min-width: 100px;
 	min-height: 40px;
 	border-radius: 20px;
-	margin-top: auto;
 	margin-bottom: 14px;
 	background-color: rgba($color1, .43);
 	font-size: 22px;
@@ -127,17 +129,10 @@
       background-color: rgba($color1, .63);
       cursor: pointer;
    }
-
-	@media (max-height: 700px) and (min-width: 1200px) {
-		display: none;
-	}
 }
 
 .fa-chevron-down.hero {
 	position: relative;
-	top: 0;
-	left: 0;
-	margin-bottom: 60px;
 	font-size: 28px;
 	animation-name: arrowMove;
    animation-duration: 2s;
@@ -146,18 +141,6 @@
 
 	&:hover {
 		cursor: pointer;
-	}
-
-	@media (max-height: 900px) {
-		margin-bottom: 200px;
-	}
-
-	@media (max-height: 700px) {
-		margin-bottom: 30px;
-	}
-
-	@media (max-height: 700px) and (min-width: 1200px) {
-		display: none;
 	}
 }
 
@@ -168,18 +151,8 @@
 	display: flex;
    height: 15px;
 
-	@media (max-height: 640px) {
-		right: unset;
-		left: 50%;
-		bottom: 150px;
-		transform: translate(-50%, 0);
-	}
-
-	@media (max-height: 700px) and (min-width: 1200px) {
-		right: 73px;
-		bottom: 100px;
-		left: unset;
-		transform: none;
+	@media (max-width: 700px) {
+		display: none;
 	}
 }
 

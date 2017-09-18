@@ -38,6 +38,7 @@ body::-webkit-scrollbar-thumb
 
 // Wrapper na elementy.
 .container {
+   box-sizing: border-box;
 	width: 824px;
 	margin: 0 auto;
 
@@ -50,11 +51,12 @@ body::-webkit-scrollbar-thumb
 	}
 
 	@media (max-width: 600px) {
-		width: 450px;
+		width: 430px;
 	}
 
-   @media (max-width: 400px) {
-		width: 320px;
+   @media (max-width: 450px) {
+		width: 100%;
+      padding: 0 20px;
 	}
 }
 

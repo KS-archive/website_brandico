@@ -70,7 +70,7 @@ gulp.task('concatenate', ['concatenate-scripts', 'concatenate-styles', 'concaten
 
 // Konkatenacja i minifikacja skryptów - development.
 gulp.task('concatenate-scripts', function() {
-	return gulp.src(['./src/main.js', './src/components/**/*.js'])
+	return gulp.src(['./src/utils/jquery.js', './src/utils/owlCarousel.js', './src/utils/hammer.js', './src/main.js', './src/components/**/*.js'])
       .pipe(plumber())
       .pipe(gulpif(!production, sourcemaps.init()))
 		.pipe(babel({

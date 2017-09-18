@@ -1,4 +1,5 @@
 .members__description {
+	padding: 0;
 	font-size: 20px;
 	font-weight: 500;
 	color: #3c3c3b;
@@ -47,15 +48,8 @@
 }
 
 .members__wrapper {
-	// position: relative;
-	// overflow: hidden;
 	max-width: calc(100% - 40px);
 	height: 600px;
-}
-
-.members__wrapper-content {
-	// position: relative;
-	// display: flex;
 }
 
 .members__member {
@@ -71,15 +65,6 @@
 	}
 }
 
-.member__img-link {
-
-}
-
-.member__img {
-	// width: 206px;
-	// height: 206px;
-}
-
 .member__name {
 	margin: 30px 0;
 	font-family: $secondFont;
@@ -89,16 +74,20 @@
 	color: #3c3c3b;
 
 	@media (max-width: 500px) {
+      margin: 30px 0 10px;
 		font-size: 22px;
 	}
 }
 
 .member__description {
+   box-sizing: border-box;
    font-size: 20px;
    color: #3c3c3b;
    white-space: pre-wrap;
 
 	@media (max-width: 500px) {
-		font-size: 19px;
+      padding: 15px;
+		font-size: 17px;
+      text-align: center;
 	}
 }

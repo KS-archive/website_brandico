@@ -121,6 +121,10 @@
 	@media (max-width: 800px) {
 		font-size: 36px;
 	}
+
+   @media (max-width: 600px) {
+		font-size: 30px;
+	}
 }
 
 .project__line {
@@ -137,7 +141,7 @@
 	color: #fff;
 
    @media (max-width: 560px) {
-		font-size: 18px;
+		font-size: 17px;
 	}
 }
 
