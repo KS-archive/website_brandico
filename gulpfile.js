@@ -19,7 +19,7 @@ const gulp = require('gulp'),
       plumber = require('gulp-plumber'),
 		reload = function(){setTimeout(browserSync.reload, 1000)};
 
-let production = false;
+let production = true;
 
 // Tworzy wersję deweloperską.
 gulp.task('default', function(callback) {

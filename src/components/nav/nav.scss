@@ -5,7 +5,7 @@
 	height: $menuHeight;
 	width: 100vw;
 	background-color: #fff;
-   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
    transition: all .6s;
 
 	&.sticky {
@@ -25,7 +25,7 @@
 
    @media (max-width: 1190px) {
 		overflow: hidden;
-      height: 0;
+      height: 0 !important;
 	}
 }
 
@@ -136,6 +136,11 @@
    height: 0;
    width: 100vw;
    visibility: hidden;
+
+   @media (max-width: 1190px) {
+		overflow: hidden;
+      height: 0 !important;
+	}
 }
 
 .nav__burger {
